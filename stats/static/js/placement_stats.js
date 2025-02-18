@@ -12,11 +12,11 @@ function fetchDataAndRenderChart(company = null) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log("✅ Fetched Data:", data); // Debugging
+            console.log(" Fetched Data:", data); // Debugging
             populateCompanyFilter(data);  // Populate dropdown
             updateChart(data.company_placement_data);  // Render chart
         })
-        .catch(error => console.error('❌ Error fetching data:', error));
+        .catch(error => console.error('Error fetching data:', error));
 }
 
 // Populate Company Filter
@@ -31,7 +31,6 @@ function populateCompanyFilter(data) {
         let option = new Option(company, company);
         companyFilter.add(option);
     });
-
     // Set the dropdown value to the currently selected company
     companyFilter.value = data.default_company;
 }
@@ -39,7 +38,7 @@ function populateCompanyFilter(data) {
 // Apply Filter and Update Chart (Triggered only when clicking "Apply Filters")
 function applyFilter() {
     let selectedCompany = document.getElementById('companyFilter').value;
-    console.log(`🔍 Applying Filter - Selected Company: ${selectedCompany}`);
+    console.log(` Applying Filter - Selected Company: ${selectedCompany}`);
     
     fetchDataAndRenderChart(selectedCompany); // Fetch data based on selected company
 
@@ -56,7 +55,7 @@ function updateChart(data) {
     const ctx = document.getElementById('companyPlacementsChart').getContext('2d');
 
     if (data.length === 0) {
-        console.warn("⚠️ No data available for the selected company.");
+        console.warn(" No data available for the selected company.");
         return;
     }
 

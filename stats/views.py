@@ -12,18 +12,18 @@ def get_chart_data(request):
     
     selected_company = request.GET.get('company', None)
 
-    # 🔍 Find the company that offered the highest salary
+    # Find the company that offered the highest salary
     highest_salary_company = PlacedStudent.objects.order_by('-salary_lpa').first()
     default_company = highest_salary_company.company.name if highest_salary_company else None
 
-    # 🔍 Get all company names for the dropdown
+    # Get all company names for the dropdown
     all_companies = list(Company.objects.values_list('name', flat=True).distinct())
 
-    # 🔍 If no company is selected, use the default company
+    # If no company is selected, use the default company
     if not selected_company:
         selected_company = default_company
 
-    # 🔍 Get student placement count **per year** for the selected company
+    #  Get student placement count **per year** for the selected company
     company_placement_data = list(
         PlacedStudent.objects.filter(company__name=selected_company)
         .values('placement_year')
@@ -32,7 +32,7 @@ def get_chart_data(request):
     )
 
     # Debugging: Print API response
-    print("✅ API Response:", {
+    print(" API Response:", {
         'company_placement_data': company_placement_data,
         'companies': all_companies,
         'default_company': default_company
