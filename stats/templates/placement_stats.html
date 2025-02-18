@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Statistics</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/placement_stats.css' %}">
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- AOS (Animate on Scroll) Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+
+    <header>
+        <h1>📊 Placement Statistics</h1>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <label for="companyFilter">Select Company:</label>
+        <select id="companyFilter">
+
+        </select>
+        <button onclick="applyFilter()">Apply Filters</button>
+    </section>
+    
+    <section class="statistics-container">
+        
+
+        <div class="chart-container" data-aos="fade-up">
+            <h2>🏢 Company-wise Placements</h2>
+            <canvas id="companyPlacementsChart"></canvas>
+        </div>
+
+        <div class="chart-container" data-aos="fade-up">
+            <h2>💰 Salary Distribution</h2>
+            <canvas id="salaryChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Link JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="{% static 'js/placement_stats.js' %}"></script>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init();
+    </script>
+
+</body>
+</html>

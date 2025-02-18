@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 15px 20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideDown 1s ease-in-out;
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Main container to hold both charts side by side */
+.statistics-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Increased to allow both charts */
+    margin: auto;
+}
+
+/* Each chart container */
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 48%;  /* Ensures charts sit side by side */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    min-height: 450px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart-container:hover {
+    transform: scale(1.03);
+}
+
+/* Ensuring both charts look consistent */
+canvas {
+    max-width: 100%;
+    height: 400px !important; /* Increased to fix small chart issue */
+}
+
+/* Filters Section */
+.filters {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filters select, .filters button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.filters select {
+    min-width: 200px;
+}
+
+.filters button {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.filters button:hover {
+    background: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .statistics-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .chart-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
