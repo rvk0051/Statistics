@@ -19,8 +19,8 @@ header {
     background: #007bff;
     color: white;
     padding: 15px 20px;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: slideDown 1s ease-in-out;
@@ -45,7 +45,7 @@ header {
 }
 
 /* Each chart container */
-.chart-container {
+.chart-container,.schart-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -59,7 +59,7 @@ header {
     justify-content: center;
 }
 
-.chart-container:hover {
+.chart-container:hover, .schart-container:hover {
     transform: scale(1.03);
 }
 
@@ -109,8 +109,12 @@ canvas {
     .statistics-container {
         flex-direction: column;
         align-items: center;
+       
     }
     .chart-container {
+        width: 90%;
+    }
+    .schart-container {
         width: 90%;
     }
 }
