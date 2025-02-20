@@ -11,7 +11,6 @@
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="{% static 'css/placement_stats.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footerheader.css' %}">
 
     <!-- Chart.js for Graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -20,44 +19,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-
-    <header class="header">
-        
-        <div class="container">
-            <div class="logo">
-                <img src="https://i.ibb.co/vh6n771/logo.png" alt="College Logo">
-            </div>
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="{#home%}">Home</a></li>
-                    <li><a href="{#aboutus%}">About Us</a></li>
-                    <li class="dropdown-parent">
-                        <a href="#top-placements">Top Placements</a>
-                        <ul class="dropdown">
-                            <li><a href="{placement%}">Placement Data</a></li>
-                            <li><a href="#placement-statistics">Placement Statistics</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-parent">
-                        <a href="#companies">Companies</a>
-                        <ul class="dropdown">
-                            <li><a href="partner.html">Our Partners</a></li>
-                            <li><a href="learningdev.html">Learning and Development</a></li>
-                            <li><a href="placementg.html">Placement Guidelines</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{contact%}">Contact Us</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
+    <header>
+        Placement Statistics
     </header>
-
     <!-- Filters Section -->
-    
-    <h2>Placement Statistics</h2>
     <section class="statistics-container">
         
 
@@ -73,7 +38,7 @@
             <canvas id="companyPlacementsChart"></canvas>
         </div>
 
-        <div class="schart-container" data-aos="fade-up">
+        <div class="chart-container" data-aos="fade-up">
             <h2>💰 Salary Distribution</h2>
             <canvas id="salaryChart"></canvas>
         </div>
@@ -87,46 +52,6 @@
         // Initialize AOS animations
         AOS.init();
     </script>
-    <section class="footer-section">
-        <div class="footer-container">
-            <!-- Contact Information -->
-            <div class="footer-contact">
-                <h3>BANASTHALI VIDYAPITH PLACEMENT CENTRE</h3>
-                <p>Vanasthali Rd, Aliyabad</p>
-                <p>Radha Kishnpura,Jaipur</p>
-                <p>Rajasthan ,PinCode 304022</p>
-                <p><i class="fas fa-phone"></i> Phone No:- 01438 – 228524
 
-                    FAX No:- 01438-228365</p>
-                <p><i class="fas fa-envelope"></i> <a href="#">placement@banasthali.in</a></p>
-            </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h3>QUICK LINKS</h3>
-                <ul>
-                    <li><a href="#">About BV</a></li>
-                    <li><a href="#">Placement Guidelines</a></li>
-                    <li><a href="#">Opportunities for Alumni</a></li>
-                    <li><a href="#">Photo Gallery</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-    
-            <!-- Social Links -->
-            <div class="footer-social">
-                <h3>FOLLOW US</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© Copyright 2022 AKCDS | Visitor Counter: <span id="visitor-counter">0016513</span></p>
-        </div>
-    </section>
 </body>
 </html>

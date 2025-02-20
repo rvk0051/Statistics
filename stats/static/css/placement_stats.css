@@ -19,8 +19,8 @@ header {
     background: #007bff;
     color: white;
     padding: 15px 20px;
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: slideDown 1s ease-in-out;
@@ -111,12 +111,10 @@ canvas {
         align-items: center;
        
     }
-    .chart-container {
+    .chart-container, .schart-container {
         width: 90%;
     }
-    .schart-container {
-        width: 90%;
-    }
+    
 }
 
 @media (max-width: 480px) {
