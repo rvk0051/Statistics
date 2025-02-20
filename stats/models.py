@@ -17,9 +17,3 @@ class PlacedStudent(models.Model):
     def __str__(self):
         return self.student_name
 
-class SalaryDistribution(models.Model):
-    salary_range = models.CharField(max_length=20, primary_key=True)  # e.g., "10-20"
-    student_count = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f"{self.salary_range}: {self.student_count} students"

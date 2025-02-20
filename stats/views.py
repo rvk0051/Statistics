@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.db.models import Count, Max
-from .models import PlacedStudent, Company, SalaryDistribution
+from .models import PlacedStudent, Company
 from .utils import calculate_salary_distribution  # Import the function
 def placement_stats(request):
     """Render the placement stats page."""
@@ -32,16 +32,18 @@ def get_chart_data(request):
     )
 
     # Debugging: Print API response
-    print(" API Response:", {
-        'company_placement_data': company_placement_data,
-        'companies': all_companies,
-        'default_company': default_company
-    })
+    print("API Response:")
+    print("Company Placement Data:", company_placement_data)
+    print("Companies List:", all_companies)
+    print("Default Company:", default_company)
+    print("Selected Company:", selected_company)  # ✅ This avoids errors
+
 
     return JsonResponse({
         'company_placement_data': company_placement_data,
         'companies': all_companies,
-        'default_company': default_company
+        'default_company': default_company,
+        'selected_company': selected_company
     })
 
 def get_salary_distribution(request):

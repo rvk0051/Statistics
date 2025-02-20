@@ -32,19 +32,28 @@ function populateCompanyFilter(data) {
         companyFilter.add(option);
     });
     // Set the dropdown value to the currently selected company
-    companyFilter.value = data.default_company;
+    companyFilter.value = data.selected_company;
 }
 
 // Apply Filter and Update Chart (Triggered only when clicking "Apply Filters")
 function applyFilter() {
-    let selectedCompany = document.getElementById('companyFilter').value;
-    console.log(` Applying Filter - Selected Company: ${selectedCompany}`);
-    
-    fetchDataAndRenderChart(selectedCompany); // Fetch data based on selected company
+    let companyFilter = document.getElementById('companyFilter'); // Get the dropdown
+    let selected_company = companyFilter.value; // Get selected company
 
-    // Update dropdown value to reflect selection
-    document.getElementById('companyFilter').value = selectedCompany;
+    console.log(`Applying Filter - Selected Company: ${selected_company}`); // Debugging
+
+    // Ensure the dropdown reflects the selected company
+    companyFilter.value = selected_company;  
+
+    // Update the placeholder text with the selected company's name
+    companyFilter.options[companyFilter.selectedIndex].text = selected_company;
+
+    // Fetch and update the chart for the selected company
+    fetchDataAndRenderChart(selected_company);
+    document.getElementById("selectedCompanyDisplay").value = selected_company;
 }
+
+
 
 // Update Chart
 function updateChart(data) {
@@ -78,8 +87,7 @@ function updateChart(data) {
         }
     });
 }
-// Wait for the page to load
-// Wait for the page to load
+
 document.addEventListener("DOMContentLoaded", function () {
     fetchSalaryDistribution();
 });
